@@ -19,8 +19,21 @@ services:
     ports:
       - '6379:6379'
     volumes:
-      - redis-data:/data
+      - redis_data:/data
+
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:management
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
 
 volumes:
   postgres_data:
-  redis-data:
+  redis_data:
+  rabbitmq_data:
