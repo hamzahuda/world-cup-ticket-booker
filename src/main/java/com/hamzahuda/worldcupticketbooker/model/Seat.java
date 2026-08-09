@@ -10,6 +10,8 @@ public class Seat {
     @Id
     private Long id;
 
+    private Integer seatNumber;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     @Builder.Default
