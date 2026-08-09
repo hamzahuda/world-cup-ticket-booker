@@ -7,7 +7,7 @@ import lombok.*;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class Seat {
 
-    @Id
+    @Id @GeneratedValue
     private Long id;
 
     private Integer seatNumber;
